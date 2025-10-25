@@ -42,7 +42,7 @@ body {
     max-width: 400px;
     margin: 1rem auto;
     padding: 1rem;
-    background-color: #4c53af;
+    background-color: #339bab;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -53,7 +53,7 @@ body {
 }
 
   .links:hover {
-    background-color: #668ee4;
+    background-color: #00496e;
     color:rgb(209, 209, 209);
     transform: scale(1.1);
   }
@@ -61,7 +61,7 @@ body {
   /* Evita que o efeito de hover quebre layout em mobile: só aplica em pointer fine */
 @media (hover: hover) and (pointer: fine) {
   .links:hover {
-    background-color: #668ee4;
+    background-color: #00496e;
     transform: translateY(-4px) scale(1.01);
   }
 }
@@ -76,13 +76,13 @@ body {
 
   .social-icons a {
     font-size: clamp(20px, 6vw, 32px);
-    color: #4c53af; 
+    color: #339bab; 
     text-decoration: none;
     transition: transform 0.2s ease, color 0.2s ease;
   }
 
   .social-icons a:hover {
-    color: #668ee4;
+    color: #00496e;
     transform: scale(1.1);
   }
 
