@@ -1,11 +1,11 @@
 body {
-  margin: 0;
-  padding: 0;
   background-image: url('fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 2rem 1rem;
   font-family: 'Arial', sans-serif;
 }
 
@@ -15,31 +15,25 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   width: 90%;
   max-width: 450px;
-  padding: 2rem;
   box-sizing: border-box;
-}
-
-/* Para telas menores */
-@media (max-width: 600px) {
-  .container {
-    width: 95%;
-    padding: 1.5rem;
-  }
+  padding: clamp(1.2rem, 3.5vw, 2.5rem); /* responsivo */
+  margin: 0 auto;
 }
 
 .header {
-            padding: 2rem 1rem;
+            padding: 0 0 1rem 0;
             text-align: center;
             color: rgb(0, 0, 0);
         }
 
 .profile-image {
-            width: 120px;
-            height: 120px;
+            width: clamp(80px, 15vw, 120px);
+            height: same-as-width;
+            height: clamp(80px, 15vw, 120px);
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid white;
-            margin-bottom: 1rem;
+            margin: 0 auto 0.8rem;
         }
 
 .links {
@@ -53,26 +47,35 @@ body {
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
+    font-size: clamp(1rem, 2.6vw, 1.2rem);
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    box-shadow: 0 6px 18px rgba(76,83,175,0.12);
 }
+
   .links:hover {
     background-color: #668ee4;
     color:rgb(209, 209, 209);
     transform: scale(1.1);
   }
 
-
+  /* Evita que o efeito de hover quebre layout em mobile: só aplica em pointer fine */
+@media (hover: hover) and (pointer: fine) {
+  .links:hover {
+    background-color: #668ee4;
+    transform: translateY(-4px) scale(1.01);
+  }
+}
 
   .social-icons {
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
+    margin-top: 0.8rem;
   }
 
   .social-icons a {
-    font-size: 40px;
+    font-size: clamp(20px, 6vw, 32px);
     color: #4c53af; 
     text-decoration: none;
     transition: transform 0.2s ease, color 0.2s ease;
@@ -83,4 +86,20 @@ body {
     transform: scale(1.1);
   }
 
+  /* Ajustes específicos para telas bem pequenas */
+@media (max-width: 420px) {
+  body {
+    padding: 1.2rem;
+  }
+
+  .container {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .links {
+    padding: 0.85rem;
+    border-radius: 10px;
+  }
+}
 
