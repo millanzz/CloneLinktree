@@ -1,14 +1,45 @@
 /* ======== FUNDO ======== */
 body {
-  background-image: url('fundo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: #000000;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
   font-family: 'Arial', sans-serif;
+}
+
+.blob {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: #ffffff;
+  filter: blur(180px);
+  opacity: 0.45;
+  border-radius: 50%;
+  animation: move 12s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+.blob2 {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #838383;
+  filter: blur(180px);
+  opacity: 0.35;
+  border-radius: 50%;
+  animation: move2 15s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes move {
+  0% { top: -80px; left: -80px; }
+  100% { top: 60%; left: 40%; }
+}
+
+@keyframes move2 {
+  0% { bottom: -80px; right: -80px; }
+  100% { bottom: 60%; right: 30%; }
 }
 
 /* ======== CONTAINER GLASS ======== */
